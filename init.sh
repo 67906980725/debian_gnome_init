@@ -18,7 +18,7 @@ sh ./mirror.sh
 install unzip fzf fd-find bat exa git wget curl htop proxychains4 bash-completion fonts-powerline net-tools
 install neovim neofetch 
 
-cp_conf_home ".config/environment.d/cmd.conf" # EDITOR="nvim"
+sh ./cmd_base_config.sh
 sh ./zsh.sh
 #  net
 cp_conf_root "/etc/hosts"
@@ -35,10 +35,16 @@ sh ./recorder.sh
 sh ./theme.sh
 sh ./gnome.sh
 sh ./fcitx5.sh
+# sh ./syncthing.sh
 sh ./mpv.sh
 #  normal
+sh ./firefox
 sh ./wechat.sh
 sh ./desktop_file.sh
 #  office
 
+sh ./fastgithub.sh
+
 # runtime
+
+sh ./font.sh

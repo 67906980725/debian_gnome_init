@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Terminal=false
+Icon=aria2
+Exec=sh -c "xdg-open $HOME/.config/aria2/aria_ng.html"
+Name=aria_ng
+Name[zh_CN]=aria_ng
+Comment=aria_ng
+Comment[zh_CN]=aria_ng
+Categories=Net;Network,Tool

@@ -8,6 +8,7 @@ EnumerateSkipFirst=True
 0=Control+space
 1=Shift+Shift_L
 2=Hangul
+3=Shift+Shift_R
 
 [Hotkey/AltTriggerKeys]
 0=Shift_L
@@ -56,7 +57,7 @@ PreeditEnabledByDefault=True
 # 切换输入法时显示输入法信息
 ShowInputMethodInformation=True
 # 在焦点更改时显示输入法信息
-showInputMethodInformationWhenFocusIn=True
+showInputMethodInformationWhenFocusIn=False
 # 显示紧凑的输入法信息
 CompactInputMethodInformation=True
 # 显示第一个输入法的信息

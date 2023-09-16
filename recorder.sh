@@ -3,7 +3,8 @@
 source ./install.sh
 
 # flameshot 截图命令： flameshot gui
-install flameshot xdg-desktop-portal xdg-desktop-portal-wlr grim 
+install flameshot xdg-desktop-portal grim 
+# install xdg-desktop-portal-wlr
 
 # obs必要设置: 
 #    `来源或预览上右击`-`变换`-`拉伸到全屏`; 

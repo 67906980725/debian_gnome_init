@@ -2,11 +2,30 @@
 
 # 快捷调节音量
 
+# pactl
+# plus_volume() {
+#   pactl list sinks | grep Name | awk '{print $2}' | xargs -I {} pactl set-sink-volume {} +3%
+# }
+# substract_volume() {
+#   pactl list sinks | grep Name | awk '{print $2}' | xargs -I {} pactl set-sink-volume {} -3%
+# }
+
+# wpctl
+get_sink() {
+  # 获取树形结构的音频状态信息, 截取包含 "Audio" 的行及后 10 行
+  # 截取含 "Sinks" 的行及后 5 行, 截取含 "*" 号的行
+  # 截取第一行, 截取第 3 列, 去除 "." 号
+  wpctl status | grep -A 10 Audio | grep -A 5 Sinks | grep "*" | sed -n '1p' | awk '{print $3}' | sed 's/\.//'
+}
 plus_volume() {
-  pactl list sinks | grep Name | awk '{print $2}' | xargs -I {} pactl set-sink-volume {} +3%
+  local sink_id=$(get_sink)
+  wpctl set-mute $sink_id 0
+  wpctl set-volume $sink_id 3%+
 }
 substract_volume() {
-  pactl list sinks | grep Name | awk '{print $2}' | xargs -I {} pactl set-sink-volume {} -3%
+  local sink_id=$(get_sink)
+  wpctl set-mute $sink_id 0
+  wpctl set-volume $sink_id 3%-
 }
 
 case $1 in

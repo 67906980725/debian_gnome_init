@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 
 # 快捷禁用/启用麦克风
-pactl list sources | grep Name | grep input | awk '{print $2}' | xargs -I {} pactl set-source-mute {} toggle
+#  pactl
+# pactl list sources | grep Name | grep input | awk '{print $2}' | xargs -I {} pactl set-source-mute {} toggle
+#  wpctl
+source_id=$(wpctl status | grep -A 10 Audio | grep -A 5 Sources | grep "*" | sed -n '1p' | awk '{print $3}' | sed 's/\.//')
+  wpctl set-mute $source_id toggle

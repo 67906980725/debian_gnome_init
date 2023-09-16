@@ -2,22 +2,23 @@
 
 check_parent()
 {
-    file="$1"
-    dir=$(dirname "$file")
+    local file="$1"
+    # local file_full_path=$(readlink -f "$file")
+    local dir=$(dirname "$file")
     [ ! -e "$dir" ] && mkdir -p "$dir"
 }
 safe_cp()
 {
-    from="$1"
-    to="$2"
+    local from="$1"
+    local to="$2"
     check_parent "$to"
     cp -rf "$from" "$to"
 }
 
 cp_conf_root()
 {
-    file="$1"
-    conf_file="./conf$file"
+    local file="$1"
+    local conf_file="./conf$file"
     bak_conf_root "$file"
     echo "overwrite system file ${file} by ${conf_file}"
     # cat "${conf_file}" 2>&1 | sudo tee $file 
@@ -34,11 +35,14 @@ append_conf_root()
 
 cp_conf_home()
 {
-    file="$1"
-    conf_file="./conf/home/$file"
-    home_file="$HOME/$file"
+    local file="$1"
+    local conf_file="./conf/home/$file"
+    local home_file="$HOME/$file"
     bak_conf_home "$file"
     echo "overwrite home file ${home_file} from ${conf_file}"
+    if [ -d "$conf_file" ]; then
+        rm -rf "$home_file"
+    fi
     safe_cp "$conf_file" "$home_file"
 }
 
@@ -51,8 +55,8 @@ append_conf_home()
 
 bak_conf_root()
 {
-    file="$1"
-    bak_file="./conf_bak$file"
+    local file="$1"
+    local bak_file="./conf_bak$file"
 
     if [ ! -e "$bak_file" ] && [ -e "$file" ]; then
         echo "backup root file ${file} to ${bak_file}"
@@ -62,9 +66,9 @@ bak_conf_root()
 
 bak_conf_home()
 {
-    file="$1"
-    bak_file="./conf_bak/home/$file"
-    home_file="$HOME/$file"
+    local file="$1"
+    local bak_file="./conf_bak/home/$file"
+    local home_file="$HOME/$file"
 
     if [ ! -e "$bak_file" ] && [ -e "$home_file" ]; then
         echo "backup home file ${home_file} to ${bak_file}"

@@ -1,21 +1,18 @@
 #!/usr/bin/env bash
 
-# mpv实现简单音乐/视频音乐随机播放
+# mpv实现简单音乐/视频音乐随机播放, mp 3, mp 4
 
 MV_DIR=${MV_DIR:-$HOME/asset/tel/recreation/mv} # 音乐目录
 
-album()
-{
+album() {
   gnome-session-inhibit mpv --image-display-duration=inf --fs --loop=inf
 }
 
-mp4()
-{
+mp4() {
   gnome-session-inhibit mpv --shuffle --border=yes --volume=56 --geometry=100%:0 --autofit=20% --ontop-level=system --ontop ${MV_DIR}
 }
 
-mp3()
-{
+mp3() {
   mpv --no-video --shuffle --volume=56 ${MV_DIR}
 }
 
