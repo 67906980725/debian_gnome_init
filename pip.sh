@@ -3,5 +3,5 @@
 source ./install.sh
 # source ./cp_conf.sh
 
-install pip
+install python3-full pip
 pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
