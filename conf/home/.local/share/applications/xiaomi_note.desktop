@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Terminal=false
+Icon=accessories-notes
+Exec=sh -c "firefox --new-window https://i.mi.com/note/h5#/"
+Name=xiaomi_note
+Name[zh_CN]=小米笔记
+Comment=xiaomi note
+Comment[zh_CN]=小米笔记
+Categories=Net;Network,Tool
