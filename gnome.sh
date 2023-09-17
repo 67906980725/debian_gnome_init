@@ -116,7 +116,11 @@ eye() {
 # 快捷键 重启后生效
 keybind() {
     # 修改切换窗口为 alt+tab
+    gsettings set org.gnome.desktop.wm.keybindings switch-applications '[]'
+    gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward '[]'
     gsettings set org.gnome.desktop.wm.keybindings switch-windows '["<Alt>Tab"]'
+    gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward '["<Shift><Alt>Tab"]'
+
     # 修改切换窗口/应用不跨工作区 (win+滚轮可以切换工作区)
     gsettings set org.gnome.shell.app-switcher current-workspace-only true
 
