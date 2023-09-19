@@ -5,6 +5,7 @@ source ./install.sh
 
 install fonts-wqy-microhei
 
+# https://github.com/ryanoasis/nerd-fonts
 install_nerd() {
   local font_name="$1"
   local font_pkg="${font_name}.tar.xz"

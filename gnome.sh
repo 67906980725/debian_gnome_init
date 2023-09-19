@@ -85,6 +85,7 @@ plugin() {
 theme() {
     install papirus-icon-theme oxygen-icon-theme
     install bibata-cursor-theme
+    # xdg-open https://github.com/vinceliuice/Orchis-theme
 
     gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
     gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'
