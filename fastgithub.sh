@@ -28,6 +28,7 @@ mv -f "$unzip_name" "$install_path"
 cp_conf_home ".local/app/fastgithub/fastgithub_deamon.sh"
 cp_conf_home ".local/share/applications/fastgithub.desktop"
 ln -sf "$HOME/.local/share/applications/fastgithub.desktop" "$HOME/.config/autostart/"
+# rm "$HOME/.config/autostart/fastgithub.desktop"
 
 # firefox 需要安装证书, 请查看安装目录下 README.html
 # 设置->隐私与安全->证书->查看证书->证书颁发机构，导入cacert/fastgithub.cer，勾选“信任由此证书颁发机构来标识网站”

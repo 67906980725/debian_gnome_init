@@ -42,6 +42,9 @@ plugin() {
     # sed -i '6 s@0@3@' "$HOME/.local/share/gnome-shell/extensions/simplenetspeed@biji.extension/schemas/org.gnome.shell.extensions.simplenetspeed.gschema.xml"
     # sed -i 's/ button\.connect/ \/\/button\.connect/' "$HOME/.local/share/gnome-shell/extensions/simplenetspeed@biji.extension/extension.js"
 
+    # dash to dock
+    xdg-open https://extensions.gnome.org/extension/307/dash-to-dock/
+
     # 使用 Ctrl+Super+Up/Down 对工作区重新排序
     xdg-open https://extensions.gnome.org/extension/3685/reorder-workspaces/
 
