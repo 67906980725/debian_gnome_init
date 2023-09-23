@@ -22,6 +22,7 @@ sh ./cmd_base_config.sh
 sh ./zsh.sh
 #  net
 cp_conf_root "/etc/hosts"
+sh ./git.sh
 
 # sys
 # sudo sed -i "/root ALL/a $USER\ ALL=(ALL:ALL)\ ALL" /etc/sudoers

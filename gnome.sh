@@ -65,7 +65,7 @@ plugin() {
     xdg-open https://extensions.gnome.org/extension/5696/one-window-wonderland/
 
     # 窗口最大化时无标题栏
-    xdg-open https://extensions.gnome.org/extension/4630/no-titlebar-when-maximized/
+    # xdg-open https://extensions.gnome.org/extension/4630/no-titlebar-when-maximized/
 
     # 在 GNOME 的应用程序菜单中隐藏应用程序
     xdg-open https://extensions.gnome.org/extension/5895/app-hider/
