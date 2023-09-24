@@ -13,3 +13,10 @@ xdg-open https://www.lunarvim.org/docs/installation
 
 # 安装完有报错时启动lvim, 如果没有自动安装插件输入 :Lazy sync 安装插件
 # cp ~/.local/share/lunarvim/lvim/utils/installer/config.example.lua ~/.config/lvim/config.lua
+
+
+# termux	
+pkg install -y openssh git curl wget vim bat croc neovim build-essential python vim-python nodejs rust fd ripgrep
+# 同样换源, 加 git 代理
+# 下载安装脚本 修改 detect_platform 方法 else 为 pkg install -y 后运行
+
