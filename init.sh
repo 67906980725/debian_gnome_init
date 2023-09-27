@@ -32,6 +32,7 @@ sh ./git.sh
 install xclip
 sh ./wayland.sh
 #  base
+install trash-cli
 sh ./recorder.sh
 sh ./theme.sh
 sh ./gnome.sh

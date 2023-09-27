@@ -110,6 +110,9 @@ export _LD_LIBRARY_PATH=${HOME}/.local/lib
 export PATH=$SCRIPT_PATH:$BIN_PATH:$APP_IMAGE_PATH:$_LD_LIBRARY_PATH:/usr/local/bin:$PATH
 export LD_LIBRARY_PATH=${_LD_LIBRARY_PATH}:$LD_LIBRARY_PATH
 
+# go
+export PATH=$HOME/go/bin:$PATH
+
 # 查看所有别名: alias 
 # 包管理器别名
 alias sync="sudo apt update"
