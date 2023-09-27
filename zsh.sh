@@ -3,7 +3,7 @@
 source ./install.sh
 source ./cp_conf.sh
 
-install zsh fzf bat fd-find fonts-powerline unzip 
+install zsh fzf bat fd-find fonts-powerline unzip trash-cli
 # install zsh-autosuggestions zsh-syntax-highlighting
 
 # install vnstat

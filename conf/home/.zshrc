@@ -148,7 +148,7 @@ alias bbbbbbbbbb="cd ../../../../../../../../../../";
 #alias cat="bat --color always --plain"; # gnome 终端白色背景时看不到字
 alias grep="grep --color=auto";
 alias v="nvim";
-
+alias rm="trash"
 # cdls() { cd "$1" && echo $(pwd) && exa --color=auto --icons -a }
 # alias cd="cdls";
 # zls() { z "$1"; cdls }
