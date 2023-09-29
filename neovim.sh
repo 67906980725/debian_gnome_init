@@ -4,6 +4,8 @@ source ./install.sh
 source ./cp_conf.sh
 source ./default_path.sh
 
+cp_conf_home ".config/lvim/config.lua"
+
 # 先安装 nodejs pip cargo, 并换好各自的国内源, 然后 git 配置 https 和 raw 的国内代理
 install python3-all python3-pynvim fd-find ripgrep
 
