@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-# 需要当前用户是常用用户而非root, 并且常用用户账户有root权限
+#!/usr/bin/env bash 
 
 # D="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 cd $(dirname "$0")
