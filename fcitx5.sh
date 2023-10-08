@@ -5,7 +5,7 @@ source ./cp_conf.sh
 source ./default_path.sh
 
 install fcitx5 fcitx5-rime fcitx5-table fcitx5-frontend-gtk2 fcitx5-frontend-gtk3 fcitx5-frontend-gtk4 fcitx5-frontend-qt5 fcitx5-frontend-qt6 fcitx5-material-color 
-cp -frp /usr/share/applications/org.fcitx.Fcitx5.desktop $HOME/.config/autostart/
+cp -f /usr/share/applications/org.fcitx.Fcitx5.desktop $HOME/.config/autostart/
 cp -frp ./conf/home/.config/fcitx5 $HOME/.config/
 cp -frp ./conf/home/.local/share/fcitx5/themes $HOME/.local/share/fcitx5/
 
