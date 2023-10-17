@@ -4,6 +4,8 @@ source ./install.sh
 source ./cp_conf.sh
 source ./default_path.sh
 
+# dev-sidecar
+wget -P $HOME/Downloads ${GITHUB_PROXY}https://github.com/docmirror/dev-sidecar/releases/download/v1.7.3/DevSidecar-1.7.3.deb
 
 # 版本
 ver="2.1.4"
