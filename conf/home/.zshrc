@@ -49,38 +49,6 @@
 # HIST_STAMPS="mm/dd/yyyy"
 
 
-# oh-my-zsh
-ZSH="$HOME/.oh-my-zsh"
-# ZSH=/usr/share/oh-my-zsh
-# source $ZSH/oh-my-zsh.sh
-ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
-if [[ ! -d $ZSH_CACHE_DIR ]]; then
-  mkdir $ZSH_CACHE_DIR
-fi
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# ZSH_CUSTOM=/usr/share/zsh/
-ZSH_CUSTOM="$ZSH/custom"
-plugins=( z git zsh-completions zsh-autosuggestions zsh-syntax-highlighting fzf-tab )
-# plugins=( z git )
-# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source /usr/share/zsh/plugins/fzf-tab-git/fzf-tab.zsh
-
-# 随机主题 https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="random"
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-# p10k 主题
-ZSH_THEME="powerlevel10k/powerlevel10k"
-# source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-# 配置 p10k (p10k configure
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -99,22 +67,52 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+
+# zsh
+ZSH_CACHE_DIR=${XDG_CACHE_HOME:-$HOME/.cache}/oh-my-zsh
+[ ! -d $ZSH_CACHE_DIR ] && mkdir $ZSH_CACHE_DIR
+
+
+# oh-my-zsh
+# 使用包管理器安装时
+# ZSH=/usr/share/oh-my-zsh
+# ZSH_CUSTOM=/usr/share/zsh/
+# source /usr/share/oh-my-zsh/oh-my-zsh.sh
+# plugins=( z git )
+# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/share/zsh/plugins/fzf-tab-git/fzf-tab.zsh
+# source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+# 安装在用户目录下时
+ZSH="$HOME/.oh-my-zsh"
+ZSH_CUSTOM="$ZSH/custom"
+plugins=( z git zsh-completions zsh-autosuggestions zsh-syntax-highlighting fzf-tab )
+ZSH_THEME="powerlevel10k/powerlevel10k"
+source $ZSH/oh-my-zsh.sh
+
+# powerlevel10k 配置
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+
 # ---------- 自定义 ----------
 
-# 自定义环境变量
+
+# 环境变量
 export BIN_PATH=${HOME}/.local/bin
 export APP_IMAGE_PATH=${HOME}/.local/appimage
 export _LD_LIBRARY_PATH=${HOME}/.local/lib
 
-# 默认环境变量
 export PATH=$SCRIPT_PATH:$BIN_PATH:$APP_IMAGE_PATH:$_LD_LIBRARY_PATH:/usr/local/bin:$PATH
 export LD_LIBRARY_PATH=${_LD_LIBRARY_PATH}:$LD_LIBRARY_PATH
 
-# go
 export PATH=$HOME/go/bin:$PATH
 
-# 查看所有别名: alias 
-# 包管理器别名
+
+# 别名
 alias sync="sudo apt update"
 alias install="sudo apt install"
 alias update="sudo apt full-upgrade"
@@ -127,38 +125,37 @@ alias local-install="sudo dpkg -i"
 alias remove="sudo apt remove"
 alias autoremove="sudo apt autoremove"
 
-# 常用命令别名
-alias ls="exa --color=auto --icons"
-alias la="ls -a"
-alias l="ls -l"
-alias lla="ls -al"
-alias lt="ls --tree"
-alias h="cd ~"
-alias c="clear"
 alias b="cd ../"
-alias bb="cd ../../"
-alias bbb="cd ../../../"
-alias bbbb="cd ../../../../"
-alias bbbbb="cd ../../../../../"
-alias bbbbbb="cd ../../../../../../"
-alias bbbbbbb="cd ../../../../../../../"
-alias bbbbbbbb="cd ../../../../../../../../"
-alias bbbbbbbbb="cd ../../../../../../../../../"
-alias bbbbbbbbbb="cd ../../../../../../../../../../"
-#alias cat="bat --color always --plain"; # gnome 终端白色背景时看不到字
-alias grep="grep --color=auto"
-alias v="nvim"
-alias rm="trash"
+alias .="cd ./"
+alias ..="cd ../"
+alias ...="cd ../../"
+alias ....="cd ../../../"
+alias .....="cd ../../../../"
+alias ......="cd ../../../../../"
+alias .......="cd ../../../../../../"
+alias ........="cd ../../../../../../../"
+alias .........="cd ../../../../../../../../"
+alias ..........="cd ../../../../../../../../../"
+alias ...........="cd ../../../../../../../../../../"
+
 # cdls() { cd "$1" && echo $(pwd) && exa --color=auto --icons -a }
 # alias cd="cdls"
 # zls() { z "$1"; cdls }
 # alias z="zls"
 
-# git 别名
-#  加个 flag, 不重复执行
-aliased_git=0
-alias_git() {
-	# 长别名
+alias ls="exa --color=auto --icons"
+alias la="ls -a"
+alias l="ls -l"
+alias lla="ls -al"
+alias lt="ls --tree"
+
+alias rm="trash"
+alias grep="grep --color=auto"
+alias v="nvim"
+
+# git
+git_aliased=0
+git_alias() {
 	alias clone="git clone"
 	alias remote="git remote"
 	alias checkout="git checkout"
@@ -174,7 +171,6 @@ alias_git() {
 	alias stash="git stash"
 	alias reset="git reset"
 
-	# 短别名
 	alias ce="git clone"
 	alias ct="git checkout"
 	alias s="git status"
@@ -187,9 +183,9 @@ alias_git() {
 	alias m="git merge"
 	alias r="git reset"
 
-	aliased_git=1
+	git_aliased=1
 }
-unalias_git() {
+git_unalias() {
 	# 移除长别名
 	unalias clone
 	unalias remote
@@ -219,77 +215,92 @@ unalias_git() {
 	unalias m
 	unalias r
 
-	aliased_git=0
+	git_aliased=0
 }
-# 路径 hook, 变更目录后如果是 git 目录, 定义别名, 否则移除别名
-hook_chpwd() {
-	if [ $aliased_git -eq 0 ] && git rev-parse --is-inside-work-tree >/dev/null 2>&1 ; then
-		alias_git
-	elif [ $aliased_git -eq 1 ]; then
-		unalias_git
+git_hook_chpwd() {
+  # 路径 hook, 变更目录后如果是 git 目录, 定义别名, 否则移除别名
+	if [ $git_aliased -eq 0 ] && git rev-parse --is-inside-work-tree >/dev/null 2>&1 ; then
+		git_alias
+	elif [ $git_aliased -eq 1 ]; then
+		git_unalias
 	fi
 }
+git_hook_chpwd
 autoload -U add-zsh-hook
-add-zsh-hook -Uz chpwd() { hook_chpwd }
-hook_chpwd
+add-zsh-hook -Uz chpwd() { git_hook_chpwd }
 
-# 检测系统代理, 有代理则启用命令行代理
-uproxy() {
+
+# 方法
+
+# 网络流量统计
+network_statistics() {
+	local s=$(vnstat -d 2 | grep -v estimated | grep -v day | grep -v daily | grep -v + | sed '/^$/d' | awk -F "|" '{print $3}' | tr "\n" ' ')
+	echo "network statistics 网络流量(昨日 / 今日): $s"
+}
+network_statistics
+
+# 系统代理
+proxy_use_system_ignores() {
+	local ignore_hosts=$(gsettings get org.gnome.system.proxy ignore-hosts)
+	if [ "$ignore_hosts" != "@as []" ]; then
+		# ['localhost', '127.0.0.0/8', '::1']
+		ignore_hosts=$(echo "$ignore_hosts" | sed "s/^\[//;s/\]$//;s/'//g" | tr -d ' ')
+		# localhost,127.0.0.1,localaddress,.example.com
+		export no_proxy="$ignore_hosts"
+	fi
+}
+proxy_use_system() {
+  local http_proxy_port=$(gsettings get org.gnome.system.proxy.http port)
+	if [ $http_proxy_port -gt 0 ]; then
+		local http_proxy_host=$(gsettings get org.gnome.system.proxy.http host | sed "s/'//g")
+		export http_proxy="$http_proxy_host:$http_proxy_port"
+	fi
+
+	local https_proxy_port=$(gsettings get org.gnome.system.proxy.https port)
+	if [ $https_proxy_port -gt 0 ]; then
+		local https_proxy_host=$(gsettings get org.gnome.system.proxy.https host | sed "s/'//g")
+		export https_proxy="$https_proxy_host:$https_proxy_port"
+	fi
+
+	local socks_proxy_host=$(gsettings get org.gnome.system.proxy.socks host | sed "s/'//g")
+	local socks_proxy_port=$(gsettings get org.gnome.system.proxy.socks port)
+	if [ $socks_proxy_port -gt 0 ]; then
+		export socks_proxy="$socks_proxy_host:$socks_proxy_port"
+	fi
+
+	local ftp_proxy_port=$(gsettings get org.gnome.system.proxy.ftp port)
+	if [ $ftp_proxy_port -gt 0 ]; then
+		local ftp_proxy_host=$(gsettings get org.gnome.system.proxy.ftp host | sed "s/'//g")
+		export ftp_proxy="$ftp_proxy_host:$ftp_proxy_port"
+	fi
+	proxy_use_system_ignores
+	echo "using proxy 代理已启用"
+}
+proxy_use_system_all() {
+	# https://zhuanlan.zhihu.com/p/46973701
+	local auto_proxy_url=$(gsettings get org.gnome.system.proxy autoconfig-url)
+	export ALL_PROXY="$auto_proxy_url"
+	export all_proxy="$auto_proxy_url"
+	proxy_use_system_ignores
+}
+proxy_clean() {
+  export http_proxy=""
+	export https_proxy=""
+	export socks_proxy=""
+	export ftp_proxy=""
+
+	export ALL_PROXY=""
+	export all_proxy=""
+}
+proxy_auto_use() {
+	# 检测系统代理, 有代理则启用命令行代理
   local proxy_mode=$(gsettings get org.gnome.system.proxy mode)
 	if [ "$proxy_mode" = "'manual'" ]; then
-		echo "using proxy 代理已启用"
-  	local http_proxy_port=$(gsettings get org.gnome.system.proxy.http port)
-		if [ $http_proxy_port -gt 0 ]; then
-  		local http_proxy_host=$(gsettings get org.gnome.system.proxy.http host | sed "s/'//g")
-			export http_proxy="$http_proxy_host:$http_proxy_port"
-		fi
-
-  	local https_proxy_port=$(gsettings get org.gnome.system.proxy.https port)
-		if [ $https_proxy_port -gt 0 ]; then
-			local https_proxy_host=$(gsettings get org.gnome.system.proxy.https host | sed "s/'//g")
-			export https_proxy="$https_proxy_host:$https_proxy_port"
-		fi
-
-		local socks_proxy_host=$(gsettings get org.gnome.system.proxy.socks host | sed "s/'//g")
-  	local socks_proxy_port=$(gsettings get org.gnome.system.proxy.socks port)
-		if [ $socks_proxy_port -gt 0 ]; then
-			export socks_proxy="$socks_proxy_host:$socks_proxy_port"
-		fi
-
-  	local ftp_proxy_port=$(gsettings get org.gnome.system.proxy.ftp port)
-		if [ $ftp_proxy_port -gt 0 ]; then
-			local ftp_proxy_host=$(gsettings get org.gnome.system.proxy.ftp host | sed "s/'//g")
-			export ftp_proxy="$ftp_proxy_host:$ftp_proxy_port"
-		fi
+  	proxy_use_system
 	elif [ "$proxy_mode" = "'auto'" ]; then
-		echo "using proxy 代理已启用"
-
-		# https://zhuanlan.zhihu.com/p/46973701
-		local auto_proxy_url=$(gsettings get org.gnome.system.proxy autoconfig-url)
-		export ALL_PROXY="$auto_proxy_url"
-		export all_proxy="$auto_proxy_url"
+		proxy_use_system_all
 	else
-		export http_proxy=""
-		export https_proxy=""
-		export socks_proxy=""
-		export ftp_proxy=""
-
-		export ALL_PROXY=""
-		export all_proxy=""
-	fi
-
-	if [ "$proxy_mode" = "'manual'" ] || [ "$proxy_mode" = "'auto'" ]; then
-		local ignore_hosts=$(gsettings get org.gnome.system.proxy ignore-hosts)
-		if [ "$ignore_hosts" != "@as []" ]; then
-			# echo "['localhost', '127.0.0.0/8', '::1']" | sed "s/[//g" | sed "s/]//g" | tr -d ' '	
-			ignore_hosts=$(echo "$ignore_hosts" | sed "s/^\[//;s/\]$//;s/'//g" | tr -d ' ')
-			# export no_proxy=localhost,127.0.0.1,localaddress,.example.com
-			export no_proxy="$ignore_hosts"
-		fi
+		proxy_clean
 	fi
 }
-uproxy
-
-# 展示网络流量统计
-# _LIU_LIANG=$(vnstat -d 2 | grep -v estimated | grep -v day | grep -v daily | grep -v + | sed '/^$/d' | awk -F "|" '{print $3}' | tr "\n" ' ')
-# echo "昨日 / 今日: $_LIU_LIANG"
+proxy_auto_use
