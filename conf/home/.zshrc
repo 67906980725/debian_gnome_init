@@ -125,7 +125,6 @@ alias local-install="sudo dpkg -i"
 alias remove="sudo apt remove"
 alias autoremove="sudo apt autoremove"
 
-alias b="cd ../"
 alias .="cd ./"
 alias ..="cd ../"
 alias ...="cd ../../"
