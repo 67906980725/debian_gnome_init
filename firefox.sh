@@ -3,6 +3,8 @@
 source ./install.sh
 source ./cp_conf.sh
 
+# 卸载除简体中文外的其它多语言包
+apt list --installed | grep "firefox-esr-l10n-" | grep -v "zh-cn" | cut -d "/" -f 1 | xargs sudo apt remove -y
 install webext-ublock-origin-firefox
 
 # tampermonkey
