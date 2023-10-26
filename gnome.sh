@@ -82,6 +82,10 @@ plugin() {
     # 为你的无线网络生成分享二维码
     xdg-open https://extensions.gnome.org/extension/5416/wifi-qrcode/
 
+    # 农历
+    install gir1.2-lunardate-3.0 lunar-date liblunar-date-dev liblunar-date-3.0-1
+    xdg-open https://extensions.gnome.org/extension/675/lunar-calendar/
+
     # gsettings set org.gnome.shell enabled-extensions "['clipboard-indicator@tudmotu.com', 'netspeed@alynx.one', 'appindicatorsupport@rgcjonas.gmail.com']"
 }
 
