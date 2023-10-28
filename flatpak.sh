@@ -13,6 +13,7 @@ flatpak repair
 sudo flatpak install org.freedesktop.Platform.GL.default # 20.08
 flatpak install org.freedesktop.Platform.openh264 org.gnome.Platform.Locale org.gnome.Platform
 flatpak install com.github.tchx84.Flatseal # 权限管理
+flatpak install io.github.flattool.Warehouse # 应用管理
 
 flatpak install com.qq.QQ
 
