@@ -1,17 +1,18 @@
+# 字节跳动的代理
 [source.crates-io]
 # To use sparse index, change 'rsproxy' to 'rsproxy-sparse'
 replace-with = 'rsproxy'
-
 [source.rsproxy]
 registry = "https://rsproxy.cn/crates.io-index"
 [source.rsproxy-sparse]
 registry = "sparse+https://rsproxy.cn/index/"
-
 [registries.rsproxy]
 index = "https://rsproxy.cn/crates.io-index"
 
+# 下载 git 依赖时使用命令行的 git, 这样可以使用 git 的配置如网络代理
 [net]
 git-fetch-with-cli = true
 
+# 构建统一使用同一个临时目录, 节省空间同时自动清理
 [build]
 target-dir = "/tmp/.cargo/target"
