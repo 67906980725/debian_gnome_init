@@ -16,6 +16,7 @@ sh ./mirror.sh
 #  base
 install unzip fzf fd-find bat exa git wget curl htop proxychains4 bash-completion fonts-powerline net-tools
 install neovim neofetch 
+install gdebi
 
 sh ./cmd_base_config.sh
 sh ./zsh.sh
