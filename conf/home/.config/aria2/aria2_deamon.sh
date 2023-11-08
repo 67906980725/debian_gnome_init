@@ -23,7 +23,7 @@ update_bt_trackers() {
   echo "执行 update_bt_trackers 开始"
 
   # github代理, 如果环境变量有就用环境变量值
-  GITHUB_PROXY="${GITHUB_PROXY:-https://ghproxy.com/}"
+  GITHUB_PROXY="${GITHUB_PROXY:-https://ghproxy.net/}"
 
   # 下载 trackers 解压后删除
   wget "${GITHUB_PROXY}https://github.com/ngosang/trackerslist/archive/refs/heads/master.zip"

@@ -5,7 +5,7 @@
 
 cd $HOME/Downloads
 
-proxys=("https://ghproxy.com" \
+proxys=("https://ghproxy.net" \
     "https://gh.flyinbug.top/gh" \
     "https://proxy.methanol.top")
 
