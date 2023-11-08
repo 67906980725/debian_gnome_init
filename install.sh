@@ -5,5 +5,6 @@ install()
     sudo apt install "$@"
 }
 
-# GITHUB_PROXY="${GITHUB_PROXY:-https://gh-proxy.com/}"
+# https://ghproxy.net/ https://gh-proxy.com/
+# 发生变更时需要同步修改 $HOME/.config/environment.d/cmd.conf
 GITHUB_PROXY="${GITHUB_PROXY:-https://ghproxy.net/}"
