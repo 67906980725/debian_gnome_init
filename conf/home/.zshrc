@@ -153,6 +153,7 @@ alias lt="ls --tree"
 alias rm="trash"
 alias grep="grep --color=auto"
 alias v="nvim"
+alias note="cd ~/asset/note && lvim ."
 
 # git
 git_aliased=0
@@ -183,6 +184,7 @@ git_alias() {
 	alias b="git branch"
 	alias m="git merge"
 	alias r="git reset"
+	alias qp="git add . && git commit -am 'update' && git push -u github main"
 
 	git_aliased=1
 }
@@ -215,6 +217,7 @@ git_unalias() {
 	unalias b
 	unalias m
 	unalias r
+	unalias qp
 
 	git_aliased=0
 }
