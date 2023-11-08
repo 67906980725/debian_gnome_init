@@ -10,7 +10,6 @@ install zsh fzf bat fd-find fonts-powerline unzip trash-cli
 # sudo systemctl enable --now vnstat
 
 # 从 github clone 插件
-GITHUB_PROXY="${GITHUB_PROXY:-https://ghproxy.net/}"
 git clone --depth=1 ${GITHUB_PROXY}https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 git clone --depth=1 ${GITHUB_PROXY}https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone --depth=1 ${GITHUB_PROXY}https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
