@@ -23,6 +23,8 @@ sh ./zsh.sh
 #  net
 cp_conf_root "/etc/hosts"
 sh ./git.sh
+#  android
+install adb fastboot
 
 # sys
 # sudo sed -i "/root ALL/a $USER\ ALL=(ALL:ALL)\ ALL" /etc/sudoers
