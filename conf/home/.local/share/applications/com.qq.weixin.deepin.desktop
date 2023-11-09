@@ -6,7 +6,7 @@ Type=Application
 X-Created-By=Deepin WINE Team
 Categories=chat;
 #Icon=com.qq.weixin.deepin
-Icon=/opt/apps/com.qq.weixin.deepin/entries/icons/hicolor/48x48/apps/com.qq.weixin.deepin.png
+Icon=/opt/apps/com.qq.weixin.deepin/entries/icons/hicolor/48x48/apps/com.qq.weixin.deepin.svg
 Exec=env DEEPIN_WINE_SCALE=2 "/opt/apps/com.qq.weixin.deepin/files/run.sh" -f %f
 Name=WeChat
 Name[zh_CN]=微信
