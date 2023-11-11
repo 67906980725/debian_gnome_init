@@ -1,9 +1,15 @@
 {
     "workbench.colorTheme": "Default Light Modern",
-    "terminal.external.linuxExec": "kgx",
-    "terminal.integrated.defaultProfile.linux": "zsh",
-    "editor.fontFamily": "'JetbrainsMono Nerd Font', 'monospace', monospace",
+    "editor.fontFamily": "JetBrainsMono, 'JetBrainsMono Nerd Font Mono', 'Source Code Pro', 'SourceCodePro Nerd Font Mono', 'Microsoft YaHei', 'Source Han Sans CN', monospace",
+    "editor.fontWeight": "normal",
     "editor.wordWrap": "on",
+    "editor.fontLigatures": true,
     "editor.indentSize": 2,
-    "editor.tabSize": 2
-}
+    "editor.tabSize": 2,
+    // "terminal.external.linuxExec": "kgx",
+    "terminal.external.linuxExec": "gnome-terminal",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "markdown.copyFiles.destination": {
+      "**/*.md": ".assets/${documentBaseName}/${fileName}",
+    },
+  }
