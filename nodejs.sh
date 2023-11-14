@@ -10,3 +10,6 @@ cp_conf_home ".config/environment.d/nodejs.conf"
 
 sudo npm install -g pnpm
 sudo npm install -g yarn
+
+sudo npm install -g @microsoft/inshellisense
+inshellisense bind
