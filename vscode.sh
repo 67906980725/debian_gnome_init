@@ -17,6 +17,8 @@ extention() {
   # markdown
   code --install-extension yzane.markdown-pdf
   code --install-extension davidanson.vscode-markdownlint
+  code --install-extension shd101wyy.markdown-preview-enhanced
+
   # share code
   code --install-extension adpyke.codesnap
 

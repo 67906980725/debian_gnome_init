@@ -12,4 +12,5 @@
     "markdown.copyFiles.destination": {
       "**/*.md": ".assets/${documentBaseName}/${fileName}",
     },
+    "markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited": true,
   }
