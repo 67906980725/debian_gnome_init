@@ -288,13 +288,13 @@ proxy_use_system_all() {
 	proxy_use_system_ignores
 }
 proxy_clean() {
-  export http_proxy=""
-	export https_proxy=""
-	export socks_proxy=""
-	export ftp_proxy=""
+  unset http_proxy
+	unset https_proxy
+	unset socks_proxy
+	unset ftp_proxy
 
-	export ALL_PROXY=""
-	export all_proxy=""
+	unset ALL_PROXY
+	unset all_proxy
 }
 proxy_auto_use() {
 	# 检测系统代理, 有代理则启用命令行代理
