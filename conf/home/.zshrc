@@ -258,12 +258,14 @@ proxy_use_system() {
 	if [ $http_proxy_port -gt 0 ]; then
 		local http_proxy_host=$(gsettings get org.gnome.system.proxy.http host | sed "s/'//g")
 		export http_proxy="$http_proxy_host:$http_proxy_port"
+		# git config --global http.https://github.com.proxy ${http_proxy}
 	fi
 
 	local https_proxy_port=$(gsettings get org.gnome.system.proxy.https port)
 	if [ $https_proxy_port -gt 0 ]; then
 		local https_proxy_host=$(gsettings get org.gnome.system.proxy.https host | sed "s/'//g")
 		export https_proxy="$https_proxy_host:$https_proxy_port"
+    # git config --global https.https://github.com.proxy ${https_proxy}
 	fi
 
 	local socks_proxy_host=$(gsettings get org.gnome.system.proxy.socks host | sed "s/'//g")
@@ -292,6 +294,8 @@ proxy_clean() {
 	unset https_proxy
 	unset socks_proxy
 	unset ftp_proxy
+	# git config --global --unset http.https://github.com.proxy
+  # git config --global --unset https.https://github.com.proxy
 
 	unset ALL_PROXY
 	unset all_proxy
