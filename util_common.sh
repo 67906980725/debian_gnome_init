@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source ./conf/home/.local/shell/env/path
 
 # 简化的包安装命令
 install() {
