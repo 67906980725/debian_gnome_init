@@ -6,11 +6,23 @@
     "editor.fontLigatures": true,
     "editor.indentSize": 2,
     "editor.tabSize": 2,
+
     // "terminal.external.linuxExec": "kgx",
     "terminal.external.linuxExec": "gnome-terminal",
     "terminal.integrated.defaultProfile.linux": "zsh",
+
     "markdown.copyFiles.destination": {
       "**/*.md": ".assets/${documentBaseName}/${fileName}",
     },
     "markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited": true,
+
+    "vim.handleKeys": {
+      "<C-d>": true,
+      "<C-s>": false,
+      "<C-z>": false,
+
+      "<C-j>": false,
+      "<C-b>": false,
+      "<C-f>": false,
+    },
   }
