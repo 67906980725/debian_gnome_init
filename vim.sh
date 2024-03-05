@@ -21,7 +21,7 @@ chmod +x $HOME/.local/appimage/nvim
 # 脚本提示安装依赖时只有第一个 nodejs 的依赖输 y 安装
 # 后两个输 n (python 的 pip pynvim 和 系统命令 fd ripgrep 已经用包管理器安装过了)  
 LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s ${GITHUB_PROXY}/https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
-# when Error: read ETIMEDOUT, check ~/.gitconfig github proxy if wrong
+# 如果下载 treesiter时错误 Error: read ETIMEDOUT, 检查~/.gitconfig下github的代理是否正确
 
 # 内部命令
 # :Lazy sync # 安装插件

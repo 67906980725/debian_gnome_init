@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# aria2 服务
 
 # 切换工作目录到当前脚本目录
 #aria2_conf_dir="${XDG_CONFIG_HOME:-$HOME/.config}/aria2"
@@ -7,12 +8,12 @@ aria2_conf_dir="$(dirname "$0")"
 
 run_aria2c_daemon() {
   echo "后台启动 aria2"
-
+  source "$HOME/.local/shell/rc/path"
   /usr/bin/aria2c \
   --continue \
   --daemon=true \
   --conf-path=$aria2_conf_dir/aria2.conf \
-  --dir=$HOME/Downloads \
+  --dir=${HOME}/Downloads \
   --input-file=$aria2_conf_dir/aria2.session \
   --save-session=$aria2_conf_dir/aria2.session \
   --log=$aria2_conf_dir/aria2.log
@@ -23,10 +24,14 @@ update_bt_trackers() {
   echo "执行 update_bt_trackers 开始"
 
   # github代理, 如果环境变量有就用环境变量值
-  GITHUB_PROXY="${GITHUB_PROXY:-https://ghproxy.net/}"
-
+  # GITHUB_PROXY="${GITHUB_PROXY:-https://ghproxy.net/}"
+  source "$HOME/.local/shell/rc/github_proxy"
   # 下载 trackers 解压后删除
   wget "${GITHUB_PROXY}https://github.com/ngosang/trackerslist/archive/refs/heads/master.zip"
+  if [ ! -e "master.zip" ]; then
+    echo "trackers 文件下载失败"
+    exit 1
+  fi
   unzip master.zip
   rm -f master.zip
 
@@ -77,8 +82,8 @@ try_update_bt_trackers() {
   echo "执行 try_update_bt_trackers 结束"
 }
 
+# 后台启动 aria2
 _daemon() {
-  # 后台启动 aria2
   run_aria2c_daemon
   sleep 5
   while true; do

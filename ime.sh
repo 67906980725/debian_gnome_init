@@ -20,9 +20,11 @@ cp -frp ./conf/home/.local/share/fcitx5/themes $HOME/.local/share/fcitx5/
 # export GLFW_IM_MODULE="ibus"
 cp_conf_home ".local/shell/rc/ime"
 
-# cp -f /usr/share/applications/org.fcitx.Fcitx5.desktop $HOME/.config/autostart/
-cp_conf_home ".config/systemd/user/fcitx5.service"
-systemctl enable --user --now fcitx5 # 禁用: systemctl disable --now --user fcitx5 
+# wslg ubuntu中需要用服务的方式启动，但在实体机debian中以服务方式启动后无法显示文字及候选框
+# cp_conf_home ".config/systemd/user/fcitx5.service"
+# systemctl enable --user --now fcitx5 # 禁用: systemctl disable --now --user fcitx5
+# 实体机debian中只能以autostart的方式启动
+cp -f /usr/share/applications/org.fcitx.Fcitx5.desktop $HOME/.config/autostart/
 
 im-config
 

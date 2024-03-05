@@ -8,7 +8,7 @@ git config --global user.email "$(whoami)" # 修改为邮箱
 
 git config --global init.defaultBranch main
 git config --global push.default current 
-# git config --global pull.rebase false
+git config --global pull.rebase false
 
 # 解决 ssh: connect to host github.com port 22: Connection timed out
 # https://zhuanlan.zhihu.com/p/521340971

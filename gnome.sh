@@ -18,8 +18,9 @@ plugin() {
     #  firefox
     firefox https://addons.mozilla.org/zh-CN/firefox/addon/gnome-shell-integration/ &
 
-    # 托盘 重启/注销后在"扩展"中启用
+    # 托盘
     # xdg-open https://extensions.gnome.org/extension/615/appindicator-support/
+    # 重启/注销后在"扩展"中启用
     install gnome-shell-extension-appindicator
     # gnome-extensions enable "$(gnome-extensions list | grep -m 1 appindicator)"
 
