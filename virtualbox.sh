@@ -8,9 +8,9 @@ install libqt5opengl5 linux-headers-amd64 linux-headers-$(uname -r)
 xdg-open https://www.virtualbox.org/wiki/Linux_Downloads
 
 # 安装后执行
-# sudo modprobe vboxdrv
-# sudo modprobe vboxnetadp
-# sudo modprobe vboxnetflt
-# sudo usermod -a -G vboxusers $USER
+sudo modprobe vboxdrv
+sudo modprobe vboxnetadp
+sudo modprobe vboxnetflt
+sudo usermod -aG vboxusers $USER
 
 # reboot

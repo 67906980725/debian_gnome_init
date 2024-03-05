@@ -28,7 +28,7 @@ cp -f /usr/share/applications/org.fcitx.Fcitx5.desktop $HOME/.config/autostart/
 
 im-config
 
-
+# fcitx5-rime shift键上屏汉字而非字母的问题: 把fcitx配置里面的shift去掉，这样rime自己会接管处理。https://github.com/fcitx/fcitx5-rime/issues/15
 
 
 # cp_conf_root "/etc/locale.gen"

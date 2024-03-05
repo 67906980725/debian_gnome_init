@@ -10,6 +10,7 @@ install libfuse2 # appimage
 sh ./python.sh
 install python3-pynvim
 sh ./nodejs.sh
+sh ./rust.sh
 
 # 下载 neovim.appimage
 mkdir -p $HOME/.local/appimage
@@ -20,8 +21,8 @@ chmod +x $HOME/.local/appimage/nvim
 # https://www.lunarvim.org/docs/installation
 # 脚本提示安装依赖时只有第一个 nodejs 的依赖输 y 安装
 # 后两个输 n (python 的 pip pynvim 和 系统命令 fd ripgrep 已经用包管理器安装过了)  
-LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s ${GITHUB_PROXY}/https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
-# 如果下载 treesiter时错误 Error: read ETIMEDOUT, 检查~/.gitconfig下github的代理是否正确
+LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s ${GITHUB_PROXY}https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
+# 如果下载 treesiter时错误 Error: read ETIMEDOUT, 检查~/.gitconfig下github的代理是否正确, 如果还是报错403考虑nvim和lunarvim版本不匹配, 最好用开发版
 
 # 内部命令
 # :Lazy sync # 安装插件

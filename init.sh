@@ -15,7 +15,7 @@ sh ./git.sh
 sh ./shell.sh
 
 # cmd-net
-cp_conf_root "/etc/hosts"
+# cp_conf_root "/etc/hosts"
 install adb fastboot
 
 # sys
@@ -29,7 +29,6 @@ sh ./wayland.sh
 install trash-cli
 sh ./ime.sh
 sh ./recorder.sh
-sh ./theme.sh
 sh ./gnome.sh
 # sh ./syncthing.sh
 sh ./mpv.sh
