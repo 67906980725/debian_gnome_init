@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 source ./util_common.sh
 
 # install python3-all # 不做 python 开发可以使用这个包

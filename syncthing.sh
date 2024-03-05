@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-
-source ./install.sh
-source ./cp_conf.sh
+source ./util_common.sh
 
 install syncthing
 sudo systemctl enable --now syncthing@${USER}.service

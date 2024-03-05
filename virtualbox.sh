@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # https://wiki.debian.org/VirtualBox#Debian_12_.22Bookworm.22-1
-source ./install.sh
+source ./util_common.sh
 
 # 安装依赖
 install libqt5opengl5 linux-headers-amd64 linux-headers-$(uname -r)

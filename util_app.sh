@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-
-source ./default_path.sh
+# 创建桌面图标
 
 ## 把可执行文件软链接到~/.local/bin
 cmd()

@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
-
-source ./install.sh
-source ./cp_conf.sh
-source ./default_path.sh
+# 安装fastgithub, 由于fastgithub已删库故废弃
+source ./util_common.sh
 
 # dev-sidecar
 wget -P $HOME/Downloads ${GITHUB_PROXY}https://github.com/docmirror/dev-sidecar/releases/download/v1.7.3/DevSidecar-1.7.3.deb

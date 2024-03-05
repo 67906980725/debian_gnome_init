@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-
-source ./install.sh
+source ./util_common.sh
 
 # flameshot 截图命令： flameshot gui
 install flameshot xdg-desktop-portal grim 

@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-
-source ./install.sh
-source ./cp_conf.sh
+source ./util_common.sh
 
 # http://www.taodudu.cc/news/show-5412804.html?action=onClick
 # https://github.com/zq1997/deepin-wine

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# 用参数2文件内容覆盖参数1文件
-# 依赖于 common.sh
+# 用文件二内容覆盖文件一
+# 依赖于util_common.sh
 
-# sudo overwrite.sh target.txt source.txt
+# sudo util_overwrite.sh target.txt source.txt
 cat "$2" > "$1"

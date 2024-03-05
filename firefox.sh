@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-
-source ./install.sh
-source ./cp_conf.sh
+source ./util_common.sh
 
 # 卸载除简体中文外的其它多语言包
 apt list --installed | grep "firefox-esr-l10n-" | grep -v "zh-cn" | cut -d "/" -f 1 | xargs sudo apt remove -y
@@ -32,4 +30,4 @@ firefox https://addons.mozilla.org/zh-CN/firefox/addon/video-downloadhelper
 # xdg-open https://github.com/gorhill/uBlock/releases
 #firefox https://github.com/gorhill/uBlock-for-firefox-legacy/releases
 
-# cp_conf_home ".local/bin/s"
+# cp_conf_home ".local/script/s"

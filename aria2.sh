@@ -18,9 +18,9 @@ systemctl enable --now --user aria2.service
 #systemctl disable --now --user aria2.service 
 
 
-# install_path="$HOME/.config/aria2"
 # # aria ng  可以用浏览器扩展 aria2 explorer 代替
 # ng_ver="1.3.6" # 版本
+# install_path="$HOME/.config/aria2"
 # # 压缩包名
 # zip_name="AriaNg-${ng_ver}-AllInOne.zip"
 # # 下载解压移动到安装目录后删除压缩包

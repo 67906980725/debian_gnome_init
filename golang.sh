@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
-
-source ./install.sh
-# source ./cp_conf.sh
-# source ./default_path.sh
+source ./util_common.sh
 
 install bison ed gawk gcc libc6-dev make golang-go
 go env -w GO111MODULE=on
