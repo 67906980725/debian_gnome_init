@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-source ./install.sh
-source ./cp_conf.sh
+source ./util_common.sh
 
 cp_conf_root "/etc/apt/sources.list"
 

@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
+#  base
+source ./util_common.sh
 
-source ./cp_conf.sh
-
-# xdg 路径
-cp_conf_home ".config/environment.d/xdg.conf"
-# 命令行常用配置
-cp_conf_home ".config/environment.d/cmd.conf"
+install unzip fzf fd-find bat exa git wget curl htop proxychains4 bash-completion fonts-powerline net-tools
+install neofetch 
+install gdebi
 
 # 默认用户目录使用英文
 # mkdir -p $HOME/{Desktop,Downloads,Templates,Public,Documents,Music,Pictures,Videos}

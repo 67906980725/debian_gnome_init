@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
-
-source ./install.sh
-source ./cp_conf.sh
-source ./default_path.sh
+source ./util_common.sh
 
 nemo() {
     install nemo nemo-fileroller
@@ -19,7 +16,7 @@ plugin() {
     #  chrome
     install chrome-gnome-shell
     #  firefox
-    firefox https://addons.mozilla.org/zh-CN/firefox/addon/gnome-shell-integration/
+    firefox https://addons.mozilla.org/zh-CN/firefox/addon/gnome-shell-integration/ &
 
     # 托盘 重启/注销后在"扩展"中启用
     # xdg-open https://extensions.gnome.org/extension/615/appindicator-support/
@@ -83,8 +80,8 @@ plugin() {
     xdg-open https://extensions.gnome.org/extension/5416/wifi-qrcode/
 
     # 农历
-    install gir1.2-lunardate-3.0 lunar-date liblunar-date-dev liblunar-date-3.0-1
-    xdg-open https://extensions.gnome.org/extension/675/lunar-calendar/
+    # install gir1.2-lunardate-3.0 lunar-date liblunar-date-dev liblunar-date-3.0-1
+    # xdg-open https://extensions.gnome.org/extension/675/lunar-calendar/
 
     # gsettings set org.gnome.shell enabled-extensions "['clipboard-indicator@tudmotu.com', 'netspeed@alynx.one', 'appindicatorsupport@rgcjonas.gmail.com']"
 }
@@ -99,7 +96,7 @@ theme() {
     # gsettings set org.gnome.desktop.interface cursor-size 24
     #gsettings set org.gnome.shell.extensions.user-theme name 'Orchis'
 
-    cp_conf_home ".local/bin/toggelt_dark_mode"
+    cp_conf_home ".local/script/toggelt_dark_mode"
     
     # qt
     install adwaita-qt6 
@@ -185,14 +182,14 @@ keybind() {
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/ name "brightness minus"
     
     # ctrl+alt+shift+m 禁用/启用 麦克风
-    cp_conf_home ".local/bin/microphone_mute"
+    cp_conf_home ".local/script/microphone_mute"
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ binding "<Ctrl><Alt><Shift>m"
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ command "$BIN_PATH/microphone_mute"
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ name "microphon mute toggelt"
     
     # 音量
     # ctrl+alt+shift+0 音量+
-    cp_conf_home ".local/bin/volume_change"
+    cp_conf_home ".local/script/volume_change"
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ binding "<Ctrl><Alt><Shift>0"
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ command "$BIN_PATH/volume_change plus"
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ name "volume plus"
@@ -213,7 +210,7 @@ keybind() {
 }
 
 all() {
-    nemo
+    # nemo
     plugin
     # theme
     touchpad

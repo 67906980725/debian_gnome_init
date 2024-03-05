@@ -1,0 +1,2 @@
+alias vscode="DONT_PROMPT_WSL_INSTALL=1 /usr/bin/code"
+alias shutdown="wsl.exe --shutdown"

@@ -1,0 +1,2 @@
+# alias note="cd $WINDOWS_HOME/asset/note && lvim ."
+alias vnote="cd $HOME/.local/project/note && vscode ."

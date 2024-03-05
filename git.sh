@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
+# git 默认配置
+# https://guide.deepin.org/deepin%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/10.%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/10.4.Git.html
+source ./util_common.sh
 
-source ./install.sh
+git config --global user.name "$(whoami)"
+git config --global user.email "$(whoami)" # 修改为邮箱
 
-# 对 github 的 https 和 raw 请求使用 ghproxy 代理
-git config --global url."${GITHUB_PROXY}https://github.com/".insteadOf "https://github.com/"
-git config --global url."${GITHUB_PROXY}https://raw.githubusercontent.com/".insteadOf "https://raw.githubusercontent.com/"
-# 取消代理
-# git config --global --unset url."${GITHUB_PROXY}https://github.com/"
-# git config --global --unset url."${GITHUB_PROXY}https://raw.githubusercontent.com/"
+git config --global init.defaultBranch main
+git config --global push.default current 
+# git config --global pull.rebase false
 
-# 使用命令行的代理
-git config --global --get-all http.proxy 
+# 解决 ssh: connect to host github.com port 22: Connection timed out
+# https://zhuanlan.zhihu.com/p/521340971
+cp_conf_home ".ssh/config"
+cp_conf_home ".local/shell/rc/git"

@@ -1,0 +1,33 @@
+# cd
+alias .="cd ./"
+alias ..="cd ../"
+alias ...="cd ../../"
+alias ....="cd ../../../"
+alias .....="cd ../../../../"
+alias ......="cd ../../../../../"
+alias .......="cd ../../../../../../"
+alias ........="cd ../../../../../../../"
+alias .........="cd ../../../../../../../../"
+alias ..........="cd ../../../../../../../../../"
+alias ...........="cd ../../../../../../../../../../"
+
+# cdls() { cd "$1" && echo $(pwd) && exa --color=auto --icons -a }
+# alias cd="cdls"
+# zls() { z "$1"; cdls }
+# alias z="zls"
+
+# ls
+alias ls="exa --color=auto --icons"
+alias la="ls -a"
+alias l="ls -l"
+alias lla="ls -al"
+alias lt="ls --tree"
+
+alias grep="grep --color=auto"
+
+# trash-cli
+alias rm="trash" 
+
+# neovim
+export EDITOR="nvim" 
+alias v="nvim"

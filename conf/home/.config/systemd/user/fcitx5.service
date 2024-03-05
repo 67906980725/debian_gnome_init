@@ -1,0 +1,15 @@
+[Unit]
+Description=fcitx5 daemon
+
+[Service]
+Type=simple
+Environment="GTK_IM_MODULE=fcitx"
+Environment="QT_IM_MODULE=fcitx"
+Environment="XMODIFIERS=@im=fcitx"
+Environment="INPUT_METHOD=fcitx"
+Environment="XIM=fcitx"
+Environment="GLFW_IM_MODULE=fcitx"
+ExecStart=/usr/bin/fcitx5
+
+[Install]
+WantedBy=default.target
