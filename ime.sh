@@ -24,7 +24,8 @@ cp_conf_home ".local/shell/rc/ime"
 # cp_conf_home ".config/systemd/user/fcitx5.service"
 # systemctl enable --user --now fcitx5 # 禁用: systemctl disable --now --user fcitx5
 # 实体机debian中只能以autostart的方式启动
-cp -f /usr/share/applications/org.fcitx.Fcitx5.desktop $HOME/.config/autostart/
+# cp -f /usr/share/applications/org.fcitx.Fcitx5.desktop $HOME/.config/autostart/
+ln -s /usr/share/applications/org.fcitx.Fcitx5.desktop $HOME/.config/autostart/
 
 im-config
 
