@@ -22,15 +22,13 @@ plugin() {
     # xdg-open https://extensions.gnome.org/extension/615/appindicator-support/
     # 重启/注销后在"扩展"中启用
     install gnome-shell-extension-appindicator
-    # gnome-extensions enable "$(gnome-extensions list | grep -m 1 appindicator)"
 
     # 删除“窗口已就绪”通知，改为使窗口成为焦点
     xdg-open https://extensions.gnome.org/extension/5410/grand-theft-focus/
     
     # 剪切板
-    # xdg-open https://extensions.gnome.org/extension/779/clipboard-indicator/
-    xdg-open https://extensions.gnome.org/extension/5721/clipboard-indicator/
-    # gnome-extensions enable "$(gnome-extensions list | grep -m 1 clipboard)"
+    # xdg-open https://extensions.gnome.org/extension/5721/clipboard-indicator/
+    install gpaste-2
 
     # 网速
     xdg-open https://extensions.gnome.org/extension/1085/simple-net-speed/
@@ -54,10 +52,8 @@ plugin() {
 
     # 屏幕圆角
     xdg-open https://extensions.gnome.org/extension/1514/rounded-corners/
-    # gnome-extensions enable "$(gnome-extensions list | grep -m 1 rounded-corners)
 
     # xdg-open https://extensions.gnome.org/extension/5237/rounded-window-corners/
-    # gnome-extensions enable "$(gnome-extensions list | grep -m 1 rounded-window-corners)"
 
     # 自动最大化新窗口，在其周围留下“无用的间隙”
     xdg-open https://extensions.gnome.org/extension/5696/one-window-wonderland/
@@ -79,10 +75,6 @@ plugin() {
 
     # 为你的无线网络生成分享二维码
     xdg-open https://extensions.gnome.org/extension/5416/wifi-qrcode/
-
-    # 农历
-    # install gir1.2-lunardate-3.0 lunar-date liblunar-date-dev liblunar-date-3.0-1
-    # xdg-open https://extensions.gnome.org/extension/675/lunar-calendar/
 
     # gsettings set org.gnome.shell enabled-extensions "['clipboard-indicator@tudmotu.com', 'netspeed@alynx.one', 'appindicatorsupport@rgcjonas.gmail.com']"
 }
