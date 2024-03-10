@@ -22,4 +22,5 @@ flatpak install io.github.flattool.Warehouse
 
 # qq
 flatpak install com.qq.QQ 
-
+# wps
+flatpak install com.wps.Office
