@@ -28,6 +28,7 @@ plugin() {
     
     # 剪切板
     # xdg-open https://extensions.gnome.org/extension/5721/clipboard-indicator/
+    # 在 设置-键盘-键盘快捷键 中修改gpaste快捷键
     install gpaste-2
 
     # 网速
