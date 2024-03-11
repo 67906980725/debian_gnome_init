@@ -1,1 +1,1 @@
-alias note="cd $HOME/.local/project/note && lvim ."
+alias note="cd $HOME/Documents/note && lvim ."
