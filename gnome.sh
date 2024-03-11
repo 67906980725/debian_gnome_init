@@ -28,8 +28,11 @@ plugin() {
     
     # 剪切板
     # xdg-open https://extensions.gnome.org/extension/5721/clipboard-indicator/
-    # 在 设置-键盘-键盘快捷键 中修改gpaste快捷键
+    # 可以在 设置-键盘-键盘快捷键 中修改gpaste快捷键
     install gpaste-2
+    # /usr/libexec/gpaste/gpaste-ui &
+    # 设置唤出键为ctrl+`
+    gsettings set org.gnome.GPaste launch-ui '<Control>grave'
 
     # 网速
     xdg-open https://extensions.gnome.org/extension/1085/simple-net-speed/
