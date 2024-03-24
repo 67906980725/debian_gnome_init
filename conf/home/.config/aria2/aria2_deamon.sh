@@ -92,4 +92,7 @@ _daemon() {
       sleep 1800
   done
 }
+
+# 等自启动的魔法启动后再启动
+sleep 60
 _daemon
