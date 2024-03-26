@@ -2,6 +2,7 @@
 source ./util_common.sh
 
 ## origin
+# https://github.com/web1n/wechat-universal-flatpak
 # https://github.com/lovechoudoufu/wechat_for_linux
 
 
